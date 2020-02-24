@@ -13,16 +13,24 @@ import Video from "./components/Video/Video";
 import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
 
-const App = () => {
+const App = props => {
   return (
     <BrowserRouter>
       <div className="app-wrapper">
         <Header />
         <Navbar />
         <div className="app-wrapper-content">
-          <Route path="/myProfile" component={MyProfile} />
+          <Route
+            path="/myProfile"
+            render={() => <MyProfile posts={props.posts} />}
+          />
           <Route path="/news" component={News} />
-          <Route path="/dialogs" component={Dialogs} />
+          <Route
+            path="/dialogs"
+            render={() => (
+              <Dialogs dialogs={props.dialogs} messages={props.messages} />
+            )}
+          />
           <Route path="/friends" component={Friends} />
           <Route path="/communities" component={Communities} />
           <Route path="/photo" component={Photo} />
