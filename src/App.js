@@ -22,14 +22,12 @@ const App = props => {
         <div className="app-wrapper-content">
           <Route
             path="/myProfile"
-            render={() => <MyProfile posts={props.posts} />}
+            render={() => <MyProfile state={props.state.profilePage} />}
           />
           <Route path="/news" component={News} />
           <Route
             path="/dialogs"
-            render={() => (
-              <Dialogs dialogs={props.dialogs} messages={props.messages} />
-            )}
+            render={() => <Dialogs state={props.state.dialogsPage} />}
           />
           <Route path="/friends" component={Friends} />
           <Route path="/communities" component={Communities} />
