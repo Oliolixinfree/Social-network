@@ -22,7 +22,12 @@ const App = props => {
         <div className="app-wrapper-content">
           <Route
             path="/myProfile"
-            render={() => <MyProfile state={props.state.profilePage} />}
+            render={() => (
+              <MyProfile
+                state={props.state.profilePage}
+                addPost={props.addPost}
+              />
+            )}
           />
           <Route path="/news" component={News} />
           <Route
