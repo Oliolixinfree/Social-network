@@ -12,7 +12,6 @@ import Music from "./components/Music/Music";
 import Video from "./components/Video/Video";
 import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
-import { updateNewPostText } from "./redux/state";
 
 const App = props => {
   return (
