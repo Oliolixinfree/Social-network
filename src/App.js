@@ -12,6 +12,7 @@ import Music from "./components/Music/Music";
 import Video from "./components/Video/Video";
 import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
+import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 const App = props => {
   return (
@@ -19,15 +20,13 @@ const App = props => {
       <Header />
       <Navbar />
       <div className="app-wrapper-content">
-        <Route path="/dialogs" render={() => <Dialogs store={props.store} />} />
+        <Route
+          path="/dialogs"
+          render={() => <DialogsContainer store={props.store} />}
+        />
         <Route
           path="/myProfile"
-          render={() => (
-            <MyProfile
-              profilePage={props.state.profilePage}
-              dispatch={props.dispatch}
-            />
-          )}
+          render={() => <MyProfile store={props.store} />}
         />
         <Route path="/news" component={News} />
 
