@@ -13,6 +13,7 @@ import Video from "./components/Video/Video";
 import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
+import UsersConainer from "./components/Users/UsersConainer";
 
 const App = props => {
   return (
@@ -22,6 +23,7 @@ const App = props => {
       <div className="app-wrapper-content">
         <Route path="/dialogs" render={() => <DialogsContainer />} />
         <Route path="/myProfile" render={() => <MyProfile />} />
+        <Route path="/users" render={() => <UsersConainer />} />
         <Route path="/news" component={News} />
 
         <Route path="/friends" component={Friends} />
