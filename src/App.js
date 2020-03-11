@@ -6,7 +6,6 @@ import { Route } from "react-router-dom";
 import MyProfile from "./components/MyProfile/MyProfile";
 import News from "./components/News/News";
 import Friends from "./components/Friends/Friends";
-import Communities from "./components/Communities/Communities";
 import Photo from "./components/Photo/Photo";
 import Music from "./components/Music/Music";
 import Video from "./components/Video/Video";
@@ -14,6 +13,7 @@ import Settings from "./components/Settings/Settings";
 import Dialogs from "./components/Dialogs/Dialogs";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 import UsersConainer from "./components/Users/UsersConainer";
+import CommunitiesContainer from "./components/Communities/CommunitiesContainer";
 
 const App = props => {
   return (
@@ -27,7 +27,7 @@ const App = props => {
         <Route path="/news" component={News} />
 
         <Route path="/friends" component={Friends} />
-        <Route path="/communities" component={Communities} />
+        <Route path="/communities" render={() => <CommunitiesContainer />} />
         <Route path="/photo" component={Photo} />
         <Route path="/music" component={Music} />
         <Route path="/video" component={Video} />
