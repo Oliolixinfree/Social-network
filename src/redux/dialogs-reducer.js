@@ -78,7 +78,6 @@ export const sendMessageCreator = () => {
     type: SEND_MESSAGE
   };
 };
-
 export const updateNewMessageBodyCreator = body => {
   return {
     type: UPDATE_NEW_MESSAGE_BODY,

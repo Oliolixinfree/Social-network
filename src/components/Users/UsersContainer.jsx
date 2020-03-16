@@ -83,7 +83,7 @@ let mapStateToProps = state => {
 //     setTotalUsersCount: totalCount => {
 //       dispatch(setUsersTotalCountAC(totalCount));
 //     },
-//     toggleIsfetching: isFetching => {
+//     toggleIsFetching: isFetching => {
 //       dispatch(toggleIsFetchingAC(isFetching));
 //     }
 //   };

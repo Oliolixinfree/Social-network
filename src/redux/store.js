@@ -16,7 +16,7 @@ let store = {
           likeCount: 11
         }
       ],
-      newPostText: "ggbet"
+      newPostText: "fun.com"
     },
     dialogsPage: {
       dialogs: [

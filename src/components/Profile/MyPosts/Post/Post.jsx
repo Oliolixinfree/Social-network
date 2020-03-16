@@ -7,8 +7,7 @@ const Post = props => {
       <img src="https://memepedia.ru/wp-content/uploads/2019/06/ozadachennyy-kot-sidit-za-stolom-6.jpg" />
       {props.message}
       <div>
-        <span>like</span>
-        {props.likeCount}
+        <span>like</span> {props.likeCount}
       </div>
     </div>
   );

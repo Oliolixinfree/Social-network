@@ -1,12 +1,12 @@
-.item a {
-  color: #fff;
-  text-decoration: none;
+.nav {
+  grid-area: n;
+  background-color: #0e0e0e;
+  padding: 20px;
 }
 
-nav {
-  padding: 10px;
-  background-color: #212121;
-  grid-area: n;
+.item a {
+  color: white;
+  text-decoration: none;
 }
 
 .item a.activeLink {

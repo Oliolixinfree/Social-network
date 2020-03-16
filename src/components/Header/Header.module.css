@@ -1,9 +1,8 @@
-.logo img {
-  width: 65px;
-  padding-left: 10px;
+.header {
+  grid-area: h;
+  background-color: #060606;
 }
 
-header {
-  background-color: #000;
-  grid-area: h;
+.header img {
+  width: 60px;
 }

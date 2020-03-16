@@ -1,15 +1,11 @@
 import React from "react";
 import s from "./Header.module.css";
+import logo from "../../assets/images/logo.png";
 
 const Header = () => {
   return (
-    <header>
-      <div className={s.logo}>
-        <img
-          src="https://pngimage.net/wp-content/uploads/2019/05/youtu-logo-png-1.png"
-          alt="logo"
-        />
-      </div>
+    <header className={s.header}>
+      <img src={logo} />
     </header>
   );
 };

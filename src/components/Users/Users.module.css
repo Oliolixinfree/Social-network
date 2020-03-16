@@ -6,8 +6,4 @@
 
 .selectedPage {
   font-weight: bold;
-  color: #d09959;
-}
-.cursor {
-  cursor: pointer;
 }
