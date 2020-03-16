@@ -6,3 +6,16 @@
 .header img {
   width: 60px;
 }
+
+.headerWrapp {
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginBlock {
+  color: white;
+}
+.loginBlock a {
+  color: white;
+  text-decoration: none;
+}
