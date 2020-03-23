@@ -13,10 +13,14 @@ const ProfileInfo = props => {
       <div className={s.bgImage}>
         <img src="https://images.wallpaperscraft.ru/image/zdaniia_arhitektura_chb_160924_2560x1080.jpg" />
       </div>
+
       <div className={s.descriptionBlock}>
         <div>{props.profile.fullName}</div>
         <img src={props.profile.photos.large} />
-        <ProfileStatus status={"че нах????"} />
+        <ProfileStatus
+          status={props.status}
+          updateStatus={props.updateStatus}
+        />
         <div>About Me: {props.profile.aboutMe}</div>
         <div>
           Contacts:
