@@ -10,16 +10,16 @@ let initialState = {
     {
       id: 1,
       message: "Hi, how are you?",
-      likeCount: 12
+      likeCount: 12,
     },
     {
       id: 2,
       message: "It's my first post",
-      likeCount: 11
-    }
+      likeCount: 11,
+    },
   ],
   profile: null,
-  status: ""
+  status: "",
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -28,12 +28,12 @@ const profileReducer = (state = initialState, action) => {
       let newPost = {
         id: 5,
         message: action.newPostText,
-        likeCount: 0
+        likeCount: 0,
       };
       return {
         ...state,
         posts: [...state.posts, newPost],
-        newPostText: ""
+        newPostText: "",
       };
     }
     case SET_USER_PROFILE: {
@@ -44,7 +44,7 @@ const profileReducer = (state = initialState, action) => {
     case DELETE_POST: {
       return {
         ...state,
-        posts: state.posts.filter(p => p.id != action.postId)
+        posts: state.posts.filter((p) => p.id != action.postId),
       };
     }
     default:
@@ -52,46 +52,46 @@ const profileReducer = (state = initialState, action) => {
   }
 };
 
-export const addPostActionCreator = newPostText => {
+export const addPostActionCreator = (newPostText) => {
   return {
     type: ADD_POST,
-    newPostText
+    newPostText,
   };
 };
 
-export const setUserProfile = profile => {
+export const setUserProfile = (profile) => {
   return { type: SET_USER_PROFILE, profile };
 };
 
-export const setStatus = status => {
+export const setStatus = (status) => {
   return { type: SET_STATUS, status };
 };
 
-export const deletePost = postId => {
+export const deletePost = (postId) => {
   return { type: DELETE_POST, postId };
 };
 
 // thunk
-export const getUserProfile = userId => dispatch => {
-  usersAPI.getProfile(userId).then(response => {
-    dispatch(setUserProfile(response.data));
-  });
+export const getUserProfile = (userId) => async (dispatch) => {
+  let response = await usersAPI.getProfile(userId);
+
+  dispatch(setUserProfile(response.data));
 };
 
 // thunk
-export const getStatus = userId => dispatch => {
-  profileAPI.getStatus(userId).then(response => {
-    dispatch(setStatus(response.data));
-  });
+export const getStatus = (userId) => async (dispatch) => {
+  let response = await profileAPI.getStatus(userId);
+
+  dispatch(setStatus(response.data));
 };
 
 // thunk
-export const updateStatus = status => dispatch => {
-  profileAPI.updateStatus(status).then(response => {
-    if (response.data.resultCode === 0) {
-      dispatch(setStatus(status));
-    }
-  });
+export const updateStatus = (status) => async (dispatch) => {
+  let response = await profileAPI.updateStatus(status);
+
+  if (response.data.resultCode === 0) {
+    dispatch(setStatus(status));
+  }
 };
 
 export default profileReducer;
